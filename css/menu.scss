@@ -1,0 +1,125 @@
+
+
+@function set-notification-text-color($color) {
+  @if (lightness($color) > 50) {
+    @return darken($color, 12.5% ); // Lighter backgorund, return dark color
+  } @else {
+    @return lighten( $color, 58% ); // Darker background, return light color
+  }
+}
+
+
+$txtColor: #000;
+$hoverTxtColor: #fff;
+$menuBgColor1: #0b7309;
+$menuBgColor2: #816a2c;
+$menuHoverColor: #000;//set-notification-text-color($menuBgColor1) ;
+$menuHoverColor: #0675b3;//set-notification-text-color($menuBgColor1) ;
+$menuBoxShadowColor: #888;
+$numberOfMenuItem:5;
+$menuFont: Tahoma, Geneva, sans-serif;
+@mixin menu
+{ //style the main menu
+    
+ 
+    ul{ 
+            
+            position: absolute;            
+            list-style: none;
+            width:100% ;
+            margin: 0 0;
+            right:0;
+            top:0;
+            //right:0;
+            padding:0;
+            //margin:0;
+            height:60px;
+            //background:#000;
+            li
+            {
+               //float left remove the space between li 
+                //when the menu float, we can not use text-align property
+                float: left;   
+                position: relative;  
+                line-height:140px;
+                position: relative;
+                opacity:1;               
+                width:100% / $numberOfMenuItem; 
+                @include transition(all,.5s,linear);
+                >ul
+                {
+                    
+                    position: absolute;
+                    padding: 15px 15px;
+                    top:90px;
+                    left:0;
+                    @include transition(all,.5s,linear);
+                    //left:-50%;
+                    @include BoxShadow(#888,1px,1px,5px);
+                    display: none;
+                    height: auto;
+                    width:100%*2 ;
+                    background: #FF3B00;
+                    background: linear-gradient(-145deg,#FF3B00 0%, #F5AD98 100%);
+                    background: linear-gradient(-45deg,#2680FF 0%, #61A1FA 100%);
+                    background: linear-gradient(-90deg,#20232a 0%, #20232a 100%)!important;
+                    color: #fff;
+                    box-sizing: border-box;
+                    
+                    li{width:(80%/2); margin: auto 5%; text-align: center;} 
+                    a
+                    {
+                       
+                       width:100%;  line-height: 30px;
+                       display: block;
+                       @include transition(all,.5s,linear);
+                       box-sizing: border-box;
+                       @include StandardText(#fff,8pt,"Open Sans",left,normal,uppercase);
+                       &:hover{line-height:30px; padding:0; margin:0}
+                    }
+                    
+                }
+                
+                
+                
+                &:hover,  &>a:hover, a.current,div#current-location.current
+                {
+                    //color: $hoverTxtColor; 
+                    //color: $hoverTxtColor; 
+                    //border-bottom: 1px solid #2680FF;
+                    text-decoration:underline;
+                    text-decoration-color: #F16121;
+                    //background: $menuHoverColor; 
+                   // background: lighten( #FF3B00, 8% );
+                    //background:#2680FF;
+                    //@include BoxShadow($menuBoxShadowColor,0,-1px);
+                    ///@include BoxShadow(#7f8181,0,-1px);
+                }
+                &>a{
+                     @include StandardText($txtColor,9pt,"Open Sans",center,normal,uppercase);
+                     //@include StandardText($txtColor,10pt,"Vollkorn",center,500,uppercase);
+                     @include TextShadow(#888);
+                     display: block; cursor: pointer;  
+                     vertical-align: middle;
+                     width:100%;
+                     box-sizing: border-box;
+                    }
+
+            }
+            li:first-child{ a{border-left:none;}}
+            li:hover>ul
+            {
+            
+             display: block; z-index:300;
+             animation: moveX .5s ease;   
+            }
+                
+       
+    }
+}         
+
+   
+
+
+
+

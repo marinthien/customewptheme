@@ -1,0 +1,21 @@
+{
+          "@context" : 
+          {          
+            "@vocab": "http://schema.org/"
+          },
+          "@type" : "Restaurant",
+          "name" : "Amici Trattoria",
+          "image" : "http://hieuthiennguyen.com/amici/images/feet.jpg",
+          "menu" : [ "http://hieuthiennguyen.com/amici/asset/amiciwine.pdf", "http://hieuthiennguyen.com/amici/asset/amicimenu.pdf" ],
+          "servesCuisine" : "Italian",
+          "@type" : "Organization",
+          "url" : "http://hieuthiennguyen.com/amici/wine.html",
+          "logo" : "http://hieuthiennguyen.com/amici/images/feet.jpg",
+          "contactPoint" : 
+          [
+            { "@type" : "ContactPoint",
+              "telephone" : "+61 03 9882 7528",
+              "contactType" : "reservations"
+            } 
+           ]
+}

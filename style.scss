@@ -1,0 +1,632 @@
+/* 
+ Theme Name: Business Theme
+ Author: Hieu Thien Nguyen
+ Version: 1.0
+ Created on : Jul 26, 2015, 2:46:56 AM
+*/
+$ShadowTextColor: #888;
+$numberOfHozBox:3;
+$menuBackgroundColor: #2680FF;
+@import "css/modules";
+@import "css/components";
+@import "css/menu";
+@import "css/navigation";
+@import "css/animation";
+@import url(http://fonts.googleapis.com/css?family=Arimo);
+@import url("http://fonts.googleapis.com/css?subset=latin%2Clatin-ext&family=Open%20Sans");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans|Raleway);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+*
+{
+ padding:0; margin:0;   
+}
+html
+{
+    
+}
+
+div#Company-Space
+{
+    position: relative;
+    width:100%;  
+    height:700px;
+    
+    margin: auto auto;
+    display: block;
+    @include TextShadow($ShadowTextColor);
+    @include BoxShadow(#888,1px,1px,5px);
+
+    &:after{
+              //  @extend .no-float;
+
+
+            }
+
+    /******style company*/
+    img
+    {
+            //opacity:0;
+            position: absolute;
+            width:100%;
+            height:100%;
+            display: block;
+            top:0;
+            margin:0;
+            @include transition(all,2s,ease);
+            perspective: 1700px;
+    }
+    div.mainSwitch{
+
+            opacity:1;
+            position: absolute;
+            width:100%;
+            height: auto;
+            display: block;
+            box-sizing: border-box;
+            top:0;
+            margin:0;
+            perspective: 1700px;
+            z-index:3;
+           // overflow: hidden;
+            background: #ddd;
+
+    }
+
+    
+    .custom
+    {
+        
+        position: absolute;
+        z-index:5;
+        width:100%;
+        //margin: auto 10%;
+        height: 700px;
+        @include StandardText(#fff,30pt,"Vollkorn",center,bold,uppercase);
+        left:0; 
+        @include TextShadow(#888);
+        animation: moveLeftFromX 2s ease;
+        -webkit-animation: moveLeftFromX 2s ease;
+        box-sizing: border-box;
+        //text-indent:5px;
+        div.information-box
+        {
+              position: relative;
+              top:0;
+              width:60%;
+              height:300px;
+              display: block;
+              margin: 200px auto ;
+              text-align: center;
+             // background:   green;
+           
+            div.story,div.storyBlack
+            {
+                perspective: 1700px;
+                width:90%;
+                height: auto;
+                @include StandardText(#fff,35pt,"Roboto Condensed",center,400,normal);
+                font-style: italic;
+                margin: auto auto; 
+                animation: moveLeftFromX 2s ease;
+                
+             
+            }
+            div.storyBlack{color:#000;}
+            
+            span.slogan,span.slogan.green,.black
+            {
+                @include StandardText(#fff,13pt,"Roboto Condensed",center,400,normal);
+                margin: auto auto;
+                width: 100%;
+                line-height:60px;
+                display: block;
+                @include TextShadow(#888);
+                ///transform: translateX(150px);
+               animation: moveLeftFromX 2s ease;
+            }
+            span.slogan.green{color: #3d483d;}
+            span.slogan.black{color: #fff;}
+            a
+            {
+                
+                width:120px;
+                height:40px;
+                padding:5px 10px;
+                margin: auto auto;
+                line-height:40px;
+                display: block;
+                border-radius:28px 28px;
+                //background: $menuBackgroundColor;
+                background:  linear-gradient(rgba(112,112,112,1), rgba(190,190,190,1));
+                @include BoxShadow(#888);
+                @include StandardText(#fff,13pt,"Roboto Condensed",center,400,normal);
+                animation: moveLeftFromX 1s ease;
+                -webkit-transform: moveLeftFromX 1s ease;
+                &:hover{background: linear-gradient(rgba(43,216,255,0.5), rgba(8,38,158,0.5));}
+                
+            }
+            
+           
+        }
+        
+    }
+}
+
+div.business-social
+{
+    height:150px;
+    width:100%;
+    opacity:0.2;   
+    background: linear-gradient(to bottom, #fff,  #fff);
+}
+div.site-logo
+{
+   height:142px;
+   width:100%;
+   background: #fff;
+    //background: url('images/bg.jpg') no-repeat 50% 50%;
+   //background: linear-gradient(-90deg,#20232a 0%, #20232a 100%)!important;
+   text-align: center;
+   vertical-align:  middle;
+   border-bottom:1px inset #2680FF;
+   //border-bottom:5px solid #FF3B00;
+    div.logo
+        {
+            margin: auto auto;
+            width:40%;
+            height:132px;
+            position:absolute;
+            
+            img
+            {
+                margin: auto auto;
+                max-width:145px; 
+                height:132px;
+                //transform:scale(0.2,0.2);
+            }
+        }
+    div.site-header
+    {
+        
+        position: absolute;
+        right:10%;        
+        width:60%;
+        height: 90px;
+        @include menu; 
+        //@include BoxShadow(#000,0,1px,5px);
+        //background: linear-gradient(-45deg,#38aaab 0%, #4befed 50%,#37bebc 100%); 
+/*         background:#4f4f4f;
+         background:#FF3B00;*/
+/*         background:#2680FF;*/
+    }
+}
+div#content
+{
+    
+    font-family:"Open Sans";
+    background: #e3e3e3;
+    background: #fff;
+    display: block;
+       
+    div.service
+    {
+       
+        width:100%; display: block;box-sizng: border-box;
+        margin: auto auto;position: relative;
+        background: #fff !important;
+        overflow: hidden;
+        //background: #fafafa !important;
+        //background: linear-gradient(90deg, #ccc 0%, #fff 50%,#fafafa 100%)!important;
+        
+        //background: linear-gradient(90deg, #fafafa 0%, #feffe8 100%) !important;
+            div.center-header
+            {
+                @include StandardText(#000,22pt,"Arimo",center,bold,uppercase);
+                display: block;
+                margin: auto auto;
+                width:80%;
+                padding:20px 0;
+                height:60px; line-height: 60px;
+                @include TextShadow(#888);
+            }
+            div.float-container
+            {
+                width:90% !important;
+                padding: 50px 0;
+                @include BoxShadow(#000,0,1px,5px);
+                //background: linear-gradient(90deg, #fafafa 0%, #fff 50%, #fff 100%)!important;
+                  background: #fff !important;
+                div.float-box
+                {
+                    width: (100%/4)!important;
+                    
+                    div.float-button
+                    {
+                        border-radius: 5px 5px;
+                        width:140px;
+                        height:30px;
+                        color:#fff !important;
+                        line-height:30px;
+                       // border:1px solid #fb9510;
+                       // background: linear-gradient(90deg, $menuBackgroundColor 0%,#0584fb 50%,$menuBackgroundColor 55%,#076dfc 100%)!important;
+                        background: linear-gradient(45deg, #ff3b00 0%, #f85006 50%, #ff3b00  100%)!important;
+                        background: linear-gradient(-90deg,#20232a 0%, #20232a 100%)!important;
+                        background: linear-gradient(-90deg,#394251 0%, #394251 100%)!important;
+                          
+                        display:    block;
+                        margin: 10px auto;
+                        padding: 3px 3px;
+                        @include BoxShadow(#888);
+                        @include StandardText(#000,8pt,"Arimo",center,bold,uppercase);
+                    }
+                    div.icon-header,div.icon-header-team,
+                    div.icon-header-com,
+                    div.icon-header-network
+                    {
+                        display:    block;
+                        margin: auto auto;
+                        width:64px;
+                        height: 64px;                        
+                        background: url('images/icon64/graph.png') no-repeat 38% 0;
+                        @include transition(all,1s,linear);
+                        
+                    }
+                    div.icon-header-team
+                    {
+                        background: url('images/icon64/evropa2.png') no-repeat 38% 0;
+                    }
+                    div.icon-header-com
+                    {
+                        background: url('images/icon64/sms.png') no-repeat 38% 0;
+                    }
+                    div.icon-header-network
+                    {
+                        background: url('images/icon64/camera.png') no-repeat 38% 0;
+                    }
+                    
+                    div.float-header,div.float-header.green,
+                    div.float-header.organge,
+                    div.float-header.black,
+                    div.float-header.gray
+                    
+                    {
+                          color:    #000 !important;
+                          font-size:12pt !important;
+                          text-align: center !important;
+                          &:after
+                          { 
+                            content:"";
+                            display:    block;
+                            width:80%; height:1px;
+                            background: $menuBackgroundColor;
+                            margin: 3px auto;
+                          }
+                    }
+                    div.float-header.red
+                    {   
+                        &:after{background: red; }  
+                    }
+                    
+                    div.float-header.purple
+                    {   
+                        &:after{background: #b55cea; }  
+                    }
+                    div.float-header.orange
+                    {   
+                        &:after{background: orange; }  
+                    }
+                    div.float-content
+                    {
+                        color: #000 !important;
+                        font-size:9pt !important;
+                        width: 80% !important;
+                        
+                    }
+                }
+            }
+    }
+    
+    div.partner
+    {
+       // background: linear-gradient(90deg, #7e7e7e 0%, #7e7e7e 100%)!important;
+        background: linear-gradient(-45deg,#2b63f1 0%,#33abff 50%, #2b63f1 100%)!important;
+        div.left-header
+            {
+                text-align: center !important;
+                //background: #08abff;
+                 //background: linear-gradient(-45deg,#2b63f1 0%,#33abff 50%, #2b63f1 100%);
+                width:100% !important;
+                height:60px !important; 
+                line-height:60px !important;
+            }
+        div.float-container,.float-container
+            {
+                
+                margin:0;
+                width:90%  !important;
+                
+                div.show-case-desc,div.show-case-img
+                {   
+                     float: left;
+                     height:650px;
+                     width:50%;
+                    div
+                    {
+                        margin:80px 0;  
+                        @include StandardText(#fff,38pt,"Arimo",left,normal);
+                        text-align: left;
+                        width:100%;
+                        height:30px;
+                        line-height:40px;
+                        color: #fff;
+                    }
+                    ul.show-case-list
+                    {
+                        margin:30px 10px; 
+                       li
+                        {
+                            line-height:50px;
+                            color: #fff; 
+                           
+                            display: list-item !important;
+                            width:100%;
+                            @include StandardText(#fff,18pt,"Open Sans",left,normal);
+                        }               
+                    }
+                }
+                div.show-case-img
+                {   
+                   perspective: 1700px;
+                   img
+                    {
+                        transform: rotateX(70deg) rotateY(0deg) rotateZ(-45deg) translateY(-130px) translateX(30px) scale(0.9);
+                        perspective: 1700px;
+                        width:100%;
+                        height:650px;
+                        @include BoxShadow(#000,-10px,-20px,30px);
+                    }
+                    
+                }
+            }
+    }
+    div.portfolio,div.service,div.partner,div.express
+    {
+        width:100%; display: block;box-sizng: border-box;
+        margin: auto auto;position: relative;
+        background: linear-gradient(90deg, #000 0%, #303030 100%);
+        overflow: hidden;
+            div.left-header
+            {
+                  @include StandardText(#fff,25pt,"Arimo",left,200,normal);
+                  display:block;
+                  margin:auto auto;
+                  width:80%;
+                  height:60px; line-height: 60px;
+            }
+            div.float-container,.float-container
+            {
+                @extend div.portfolio;
+                width:81%;
+                margin: 30px auto;
+                background: none;
+                div.float-box
+                {
+                    float: left;
+                    width: (100%/3);
+                    box-sizng: border-box;
+                    text-align: center;
+                    //style the float box for images
+                    div.float-img
+                    {
+                        img
+                        {
+                            width:94%;
+                            height:280px;
+                            //max-width:(100%/3);
+                        }
+                    }
+                    //style the float heading
+                    div.float-header,div.float-content
+                    {
+                        width:94%; margin: auto auto;
+                        padding:5px 0;
+                        @include TextShadow(#888);
+                        @include StandardText(#fff,16pt,"Arimo",left,200,normal);
+                    }
+                    div.float-content
+                    {   
+                        margin: auto auto;
+                        font-size:10pt;
+                        width:94%;
+                        text-align:left;
+                    }
+                }
+            }
+       
+    }
+    div.express
+    {
+         background: linear-gradient(rgba(12, 193, 213, 0.5), rgba(12, 193, 213, 0.5)), url('images/2.jpg') no-repeat;
+         background-size: 100% 100%;
+         height:600px;
+            div.float-container
+            {   
+                //width:100%;
+                //height:100%;
+                ///background:  linear-gradient(rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05)) !important;
+
+            }
+    }
+    
+    /***
+        box float top
+    ***/
+     div.box-icon-top
+    {
+        width:100%;
+        margin: auto auto;
+        position: relative;
+        display: block;
+        box-sizng: border-box;
+        background: #fff;
+        padding:20px 0;
+        @include BoxShadow(#888,-2px,2px,4px);
+        overflow: hidden;
+         div.float-box
+            {
+                float: left;
+                width:100%/$numberOfHozBox;
+                text-align: center;
+                opacity:0;
+                @include transition(all,.1s,linear);
+                img
+                {
+                    max-width:100%/$numberOfHozBox;
+                    height: auto;
+                }
+            }
+            div.one-column-box
+            {
+                @extend .float-box;
+                opacity:1;
+                width:100%;
+                .news-item
+                {
+                    margin: auto auto;
+                    width:95%;
+                    height:30px;
+                    line-height:30px;
+                    @include StandardText(blue,10pt,"Open Sans",left,200,normal);
+                    text-decoration: underline;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                .news-headline
+                {
+                   width:98%;
+                   margin: auto auto;
+                   @include StandardText(#000,12pt,"Open Sans Condensed",left,600,uppercase);
+                   height:45px;
+                   line-height:60px;
+                   border-bottom:2px solid #0881c4;
+                }
+                
+            }
+           
+     }
+    
+    
+    
+    
+}
+.main-container
+{
+    width:100%;
+    font-size:12pt;
+    color: #000;
+    margin: auto auto;
+    //padding: 5% 5%;
+    p
+    {
+     line-height:1.65em;
+     font-size:12pt;
+     font-family:Arial, sans-serif;
+    }
+    
+}
+div#footer
+{
+    width:100%;
+    height:380px;
+   // background: #2d3033;
+    background: linear-gradient(-90deg,#20232a 0%, #20232a 100%)!important;
+    .footer-content
+    {
+        width:100%;
+        display: block;
+        margin:0;
+        div.float-container,.float-container
+            {
+                //@extend div.portfolio;
+                width:63%;
+                margin: auto auto;
+                background: none;
+                height:340px;
+               
+                div.float-box
+                {
+                    float: left;
+                    margin: 20px auto;
+                    width: (100%/3);
+                    box-sizng: border-box;
+                    text-align: center;
+                    //style the float heading
+                    div.float-header,div.float-content
+                    {
+                        width:94%; margin: auto auto;
+                        padding:5px 0;
+                        @include TextShadow(#888);
+                        @include StandardText(#fff,20pt,"Vollkorn",left,400,normal);
+                         font-family: 'Roboto Condensed', sans-serif;
+                        
+                    }
+                    div.float-content
+                    {   
+                        margin: 20px auto;
+                        font-size:10pt;
+                        width:94%;
+                        text-align:left;
+                        span
+                        {   
+                            width:100%;
+                            display: block;
+                            line-height: 30px;
+                        }
+                        div.social-connect, div.social-connect-twitter
+                       ,div.social-connect-linkedin
+                       ,div.social-connect-fb
+                        {
+                            //display:block;
+                            float:left;
+                            margin: 0;
+                            width:64px;
+                            height: 64px;                        
+                            background: url('images/icon64/youtube.png') no-repeat 0% 0;
+                            @include transition(all,1s,linear);
+
+                        }
+                        div.social-connect-fb
+                        {
+                             background: url('images/icon64/fb.png') no-repeat 0% 0;
+                        }
+                        div.social-connect-twitter
+                        {
+                             background: url('images/icon64/twitter.png') no-repeat 0% 0;
+                        }
+                        div.social-connect-linkedin
+                        {
+                             background: url('images/icon64/linkedin.png') no-repeat 0% 0;
+                        }
+                    }
+                }
+            }
+        
+    }
+    div.hoz-box
+    {
+        width:100%;
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        margin: auto auto;
+       
+        @include BoxShadow(#52585f,0,-1px);
+        @include StandardText(#fff,10pt,"Vollkorn",center,400,capitalize);
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+    
+}
+//@import "css/iphone.scss";

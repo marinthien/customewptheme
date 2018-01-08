@@ -1,0 +1,143 @@
+/*
+    Document   : iphone
+    Created on : Dec 28, 2014, 12:53:57 PM
+    Author     : MarinThien
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+
+$ipadPortrait:768px;
+
+
+/*
+iphone portrait
+*/
+@media screen and (max-width: $ipadPortrait)
+{
+    max-width:$ipadPortrait;    
+    div#Content-Outer
+    {
+        max-width:$ipadPortrait;
+       
+          div#Company-Space
+            {   
+                height:200px;
+                div#logo
+                { 
+                   top:40px;
+                   width:180px; height:120px;
+                   img {width:150px; height:100px;  }
+                }
+                div#Company-Header
+                { 
+                    position: absolute;
+                    top:120px;
+                    left:60px;                    
+                    width:200px;
+                    span#Company-Name-Line1{font-size:20pt;}
+                    span#Company-Name-Line2{font-size:10pt;}
+                    span#Company-Name-Line3{font-size:8pt;}
+                   
+                }
+                
+            }
+           div#Site-Nav
+            {
+                  
+                  width:100%;
+                  div#current-location
+                  {
+                        display: block;
+                        background: orange;
+                        @include StandardText(#000,10pt,$menuFont,center,3000,uppercase);
+                        @include TextShadow(#888);
+                        display: block; 
+                        line-height: auto;
+                        cursor: pointer;
+                        color: #000;
+                  }
+                  ul#shop-nav
+                    { 
+                        display: none;
+                        position: absolute;                        
+                        margin:0; 
+                        width:100%;
+                        z-index:100; background: #595740;                       
+                         li
+                          {
+                           text-align: center;
+                           //width:$ipadPortrait; 
+                           width:100%;
+                           float: none; clear: both;
+                           display: block; padding:0;                          
+                           border-bottom:1px dotted #ddd;
+                           a{display: block; width: 100%;}                           
+                          }
+                    }
+                    .Btn-Menu
+                    {
+                         position: absolute;
+                         top:160px;
+                         display: block; 
+                         transform: rotate(90deg);
+                        -moz-transform: rotate(90deg);
+                        -webkit-transform: rotate(90deg);
+                    }
+            } 
+            
+            
+            div#Content
+            {
+                width:100%;
+                //style the gallery on iphone screen
+                div.Gallery
+                {
+                      
+                      height:200px;
+                      img{height:200px;}
+                }
+                div.innerGallery
+                {
+                      height: auto;
+                      //display:none;
+                      width:100%;
+                      overflow:hidden;
+                      img{height:80px; width:90px;   }
+                }
+                /*******end of gallery style **********/
+                div.Outer
+                {                  
+                    margin:0;padding:0;
+                    div.region
+                    {
+                        width:100%;
+                        table.two-column
+                        {
+                          left:0;
+                          margin:0;padding:0;
+                          width:100%;text-align:left;
+                          td
+                            {
+                                display: block; text-align: none; width:100%;
+                                
+                                div.illustration
+                                {
+                                    //description for menu
+                                    div.Description{ font-size:10pt; padding-top:5px;}
+                                
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+           
+            
+            
+    }
+
+    
+    
+}
+
